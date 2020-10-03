@@ -10,19 +10,19 @@ object RSA {
     throw new RuntimeException("invalid")
   }
 
-  def Encrypt(x: Int, e: Int, n: Int): Int = {
-    var enc = x
+  def Encrypt(message: Int, e: Int, n: Int): Int = {
+    var enc = message
     for (i <- 1 until e) {
-      enc = (enc * x) % n
+      enc = (enc * message) % n
     }
 
     return enc
   }
 
-  def Decrypt(m: Int, d: Int, n: Int): Int = {
-    var dec = m
+  def Decrypt(message: Int, d: Int, n: Int): Int = {
+    var dec = message
     for (i <- 1 until d) {
-      dec = (dec * m) % n
+      dec = (dec * message) % n
     }
 
     return dec
