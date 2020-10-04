@@ -1,33 +1,22 @@
+import scala.annotation.switch
 object Number {
-  def IsPrime(N: Int): Boolean = {
-    if (N < 2) return false
-    if (N == 2) return true
-    if (N % 2 == 0) return false
+  def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
-    for (i <- 3 to scala.math.sqrt(N).toInt if i % 2 != 0) {
-      if (N % i == 0) {
-        return false
-      }
-    }
-
-    return true
+  def isPrime(N: Int): Boolean = {
+    if (N == 2) true else if (N < 2 || N % 2 == 0) false
+    if (
+      LazyList
+        .from(3, 2)
+        .take(scala.math.sqrt(N).toInt)
+        .filter(N % _ != 0)
+        .size > 0
+    ) true
+    else false
   }
 
-  def Coprime(N: Int): Int = {
-    val rand = scala.util.Random
-
-    while (true) {
-      val v = 2 + rand.nextInt((N - 2) + 1)
-      if (GCD(N, v) == 1) {
-        return v
-      }
-    }
-
-    throw new RuntimeException("invalid")
-  }
-
-  def GCD(a: Int, b: Int): Int = {
-    if (b == 0) return a
-    return GCD(b, a % b)
-  }
+  def coprime(N: Int): Int =
+    Iterator
+      .continually(scala.util.Random.nextInt((N - 2) + 1))
+      .find(gcd(N, _) == 1)
+      .get
 }
