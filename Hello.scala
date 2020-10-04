@@ -8,7 +8,7 @@ object Hello {
 
     val phi = (p - 1) * (q - 1)
     val N = p * q
-    val E = Number.coprime(phi)
+    val E = RSA.publicKey(phi)
     val D = RSA.privateKey(phi, E)
     println(s"p=$p, q=$q, N=$N, E=$E, D=$D, phi=$phi")
 
