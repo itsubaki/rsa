@@ -1,5 +1,5 @@
 object RSA {
-  def publicKey(phi: Int) = Number.coprime(phi)
+  def publicKey(phi: Int): Int = Number.coprime(phi)
   def privateKey(phi: Int, e: Int): Int =
     LazyList.from(1).take(phi).find(e * _ % phi == 1).get
 

@@ -13,10 +13,10 @@ object Number {
       LazyList
         .from(3, 2)
         .take(scala.math.sqrt(N).toInt)
-        .filter(N % _ == 0)
-        .size > 0
-    ) false
-    else true
+        .find(N % _ == 0)
+        .isEmpty
+    ) true
+    else false
   }
 
   def coprime(N: Int): Int =
