@@ -4,6 +4,8 @@ object Number {
   @scala.annotation.tailrec
   def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
+  def rand(min: Int, max: Int): Int = scala.util.Random.nextInt(max - min) + min
+
   def isPrime(N: Int): Boolean = {
     if (N == 2) true
     else if (N < 2 || N % 2 == 0) false
@@ -19,9 +21,7 @@ object Number {
 
   def coprime(N: Int): Int =
     Iterator
-      .continually(
-        scala.util.Random.nextInt(N - 3) + 2 // 2 <= coprime <= N - 1
-      )
+      .continually(rand(2, N - 1))
       .find(gcd(N, _) == 1)
       .get
 }
