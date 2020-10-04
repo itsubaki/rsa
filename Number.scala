@@ -3,8 +3,9 @@ object Number {
   def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
   def isPrime(N: Int): Boolean = {
-    if (N == 2) true else if (N < 2 || N % 2 == 0) false
-    if (
+    if (N == 2) true
+    else if (N < 2 || N % 2 == 0) false
+    else if (
       LazyList
         .from(3, 2)
         .take(scala.math.sqrt(N).toInt)
