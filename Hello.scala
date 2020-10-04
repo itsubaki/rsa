@@ -12,7 +12,7 @@ object Hello {
     println(s"p=$p, q=$q, E=$E, D=$D, euler=$e")
 
     val N = p * q
-    val message = scala.util.Random.nextInt(N - 2) + 1
+    val message = scala.util.Random.nextInt(N - 4) + 2 // 2 <= message <= N - 2
 
     val enc = RSA.encrypt(message, E, N)
     val dec = RSA.decrypt(enc, D, N)

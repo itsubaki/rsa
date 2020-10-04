@@ -19,7 +19,9 @@ object Number {
 
   def coprime(N: Int): Int =
     Iterator
-      .continually(scala.util.Random.nextInt(N - 2) + 2)
+      .continually(
+        scala.util.Random.nextInt(N - 3) + 2 // 2 <= coprime <= N - 1
+      )
       .find(gcd(N, _) == 1)
       .get
 }
