@@ -1,4 +1,3 @@
-import scala.annotation.switch
 object Number {
   def euler(p: Int, q: Int): Int = (p - 1) * (q - 1)
 
