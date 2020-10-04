@@ -9,7 +9,7 @@ object Hello {
     val phi = (p - 1) * (q - 1)
     val N = p * q
     val E = Number.coprime(phi)
-    val D = RSA.findD(phi, E)
+    val D = RSA.privateKey(phi, E)
     println(s"p=$p, q=$q, N=$N, E=$E, D=$D, phi=$phi")
 
     val message = scala.util.Random.nextInt((N - 2))

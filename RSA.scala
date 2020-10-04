@@ -1,5 +1,5 @@
 object RSA {
-  def findD(phi: Int, e: Int): Int =
+  def privateKey(phi: Int, e: Int): Int =
     LazyList.from(1).take(phi).find(d => (e * d) % phi == 1).get
 
   def encrypt(message: Int, e: Int, n: Int): Int = mod(message, e, n, message)
