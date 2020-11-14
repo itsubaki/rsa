@@ -9,10 +9,10 @@ object Number {
   def isPrime(N: Int): Boolean =
     if (N == 2) true
     else if (N < 2 || N % 2 == 0) false
-    else if (divisible(N)) true
+    else if (indivisible(N)) true
     else false
 
-  def divisible(N: Int): Boolean =
+  def indivisible(N: Int): Boolean =
     LazyList
       .from(3, 2)
       .take(scala.math.sqrt(N).toInt)
