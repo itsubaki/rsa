@@ -1,10 +1,12 @@
 object RSA {
-  def publicKey(phi: Int): Int = Number.coprime(phi)
-  def privateKey(phi: Int, e: Int): Int =
-    LazyList.from(1).take(phi).find(e * _ % phi == 1).get
+  def publicKey(e: Int): Int = Number.coprime(e)
 
-  def encrypt(message: Int, e: Int, n: Int): Int = mod(message, e, n, message)
-  def decrypt(message: Int, d: Int, n: Int): Int = mod(message, d, n, message)
+  def privateKey(e: Int, E: Int): Int =
+    LazyList.from(1).take(e).find(E * _ % e == 1).get
+
+  def encrypt(message: Int, E: Int, N: Int): Int = mod(message, E, N, message)
+
+  def decrypt(message: Int, D: Int, N: Int): Int = mod(message, D, N, message)
 
   @scala.annotation.tailrec
   private def mod(message: Int, e: Int, n: Int, acc: Int): Int =
