@@ -12,10 +12,8 @@ object Number {
     else if (divisible(N)) false
     else true
 
-  def divisible(N: Int): Boolean = !indivisible(N)
-
-  def indivisible(N: Int): Boolean =
-    LazyList
+  def divisible(N: Int): Boolean =
+    !LazyList
       .from(3, 2)
       .take(scala.math.sqrt(N).toInt)
       .find(N % _ == 0)
