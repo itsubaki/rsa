@@ -9,8 +9,10 @@ object Number {
   def isPrime(N: Int): Boolean =
     if (N == 2) true
     else if (N < 2 || N % 2 == 0) false
-    else if (indivisible(N)) true
-    else false
+    else if (divisible(N)) false
+    else true
+
+  def divisible(N: Int): Boolean = !indivisible(N)
 
   def indivisible(N: Int): Boolean =
     LazyList
