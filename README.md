@@ -1,7 +1,18 @@
 # rsa
 
+```console
+$ brew install sbt
+$ sbt --version
+$ sbt run
+```
+
+```console
+$ sbt compile
+$ sbt test
+```
+
 ```scala
-object Hello {
+object Example {
   def main(args: Array[String]): Unit = {
     val p = 17
     val q = 19

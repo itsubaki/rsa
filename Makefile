@@ -1,10 +1,9 @@
 SHELL := /bin/bash
 
-run: clean compile
-	scala Hello
+run:
+	sbt run
 
-compile: clean
-	scalac *.scala -deprecation
+test:
+	sbt test
 
-clean:
-	-rm *.class
+.PHONY: test

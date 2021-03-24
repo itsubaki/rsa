@@ -1,3 +1,5 @@
+package com.github.itsubaki.rsa
+
 object Number {
   def euler(p: Int, q: Int): Int = (p - 1) * (q - 1)
 
@@ -8,14 +10,14 @@ object Number {
 
   def isPrime(N: Int): Boolean =
     if (N == 2) true
-    else if (N < 2 || N % 2 == 0) false
+    else if (N % 2 == 0) false
     else if (divisible(N)) false
     else true
 
   def divisible(N: Int): Boolean =
     !LazyList
       .from(3, 2)
-      .take(scala.math.sqrt(N).toInt)
+      .take(scala.math.sqrt(N).toInt + 1)
       .find(N % _ == 0)
       .isEmpty
 

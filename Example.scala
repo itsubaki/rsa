@@ -1,4 +1,6 @@
-object Hello {
+import com.github.itsubaki.rsa.{Number, RSA}
+
+object Example {
   def main(args: Array[String]): Unit = {
     val p = 17
     val q = 19

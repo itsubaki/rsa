@@ -1,0 +1,31 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - name: Setup Scala
+        uses: olafurpg/setup-scala@v10
+        with:
+          java-version: "adopt@1.8"
+ 
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Tests
+        run: |
+          make test
+
+      - name: Run Example
+        run: |
+          make run

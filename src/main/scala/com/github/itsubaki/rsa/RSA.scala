@@ -1,3 +1,5 @@
+package com.github.itsubaki.rsa
+
 object RSA {
   def publicKey(e: Int): Int = Number.coprime(e)
 
