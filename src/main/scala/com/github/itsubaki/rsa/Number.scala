@@ -15,11 +15,14 @@ object Number {
     else true
 
   def divisible(N: Int): Boolean =
-    !LazyList
-      .from(3, 2)
-      .take(scala.math.sqrt(N).toInt + 1)
-      .find(N % _ == 0)
-      .isEmpty
+    if (N == 3 || N == 5 | N == 7) false
+    else if (N == 4 || N == 6 || N == 8) true
+    else
+      !LazyList
+        .from(3, 2)
+        .take(scala.math.sqrt(N).toInt + 1)
+        .find(N % _ == 0)
+        .isEmpty
 
   def coprime(N: Int): Int =
     Iterator

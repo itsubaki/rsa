@@ -14,6 +14,13 @@ class NumberSpec extends AnyFlatSpec with Diagrams {
   }
 
   "isPrime" should "returns true when number N is prime" in {
+    assert(Number.isPrime(2) === true)
+    assert(Number.isPrime(3) === true)
+    assert(Number.isPrime(4) === false)
+    assert(Number.isPrime(5) === true)
+    assert(Number.isPrime(6) === false)
+    assert(Number.isPrime(7) === true)
+    assert(Number.isPrime(8) === false)
     assert(Number.isPrime(9) === false)
     assert(Number.isPrime(10) === false)
     assert(Number.isPrime(11) === true)
@@ -24,6 +31,12 @@ class NumberSpec extends AnyFlatSpec with Diagrams {
   }
 
   "divisible" should "returns true when number N is divisible 3 to sqrt(N)" in {
+    assert(Number.divisible(3) === false)
+    assert(Number.divisible(4) === true)
+    assert(Number.divisible(5) === false)
+    assert(Number.divisible(6) === true)
+    assert(Number.divisible(7) === false)
+    assert(Number.divisible(8) === true)
     assert(Number.divisible(9) === true)
     assert(Number.divisible(10) === true)
     assert(Number.divisible(11) === false)
