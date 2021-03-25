@@ -11,15 +11,12 @@ object Number {
   def isPrime(N: Int): Boolean =
     if (N == 2 || N == 3 || N == 5 || N == 7) true
     else if (N % 2 == 0) false
-    else if (individable(N)) true
-    else false
-
-  def individable(N: Int): Boolean =
-    LazyList
-      .from(3, 2)
-      .take(scala.math.sqrt(N).toInt + 1)
-      .find(N % _ == 0)
-      .isEmpty
+    else
+      LazyList
+        .from(3, 2)
+        .take(scala.math.sqrt(N).toInt + 1)
+        .find(N % _ == 0)
+        .isEmpty
 
   def coprime(N: Int): Int =
     Iterator

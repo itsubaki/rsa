@@ -13,7 +13,7 @@ class NumberSpec extends AnyFlatSpec with Diagrams {
     assert(Number.gcd(15, 13) === 1)
   }
 
-  "isPrime" should "returns true when number N is prime" in {
+  "isPrime" should "returns true when number N > 1 is prime" in {
     assert(Number.isPrime(2) === true)
     assert(Number.isPrime(3) === true)
     assert(Number.isPrime(4) === false)
@@ -28,16 +28,6 @@ class NumberSpec extends AnyFlatSpec with Diagrams {
     assert(Number.isPrime(13) === true)
     assert(Number.isPrime(14) === false)
     assert(Number.isPrime(15) === false)
-  }
-
-  "individable" should "returns true when number N > 8 is not divide by 3 to sqrt(N)" in {
-    assert(Number.individable(9) === false)
-    assert(Number.individable(10) === false)
-    assert(Number.individable(11) === true)
-    assert(Number.individable(12) === false)
-    assert(Number.individable(13) === true)
-    assert(Number.individable(14) === false)
-    assert(Number.individable(15) === false)
   }
 
   "coprime" should "returns co-prime number of N" in {
