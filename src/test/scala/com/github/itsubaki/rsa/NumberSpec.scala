@@ -30,20 +30,14 @@ class NumberSpec extends AnyFlatSpec with Diagrams {
     assert(Number.isPrime(15) === false)
   }
 
-  "divisible" should "returns true when number N is divisible 3 to sqrt(N)" in {
-    assert(Number.divisible(3) === false)
-    assert(Number.divisible(4) === true)
-    assert(Number.divisible(5) === false)
-    assert(Number.divisible(6) === true)
-    assert(Number.divisible(7) === false)
-    assert(Number.divisible(8) === true)
-    assert(Number.divisible(9) === true)
-    assert(Number.divisible(10) === true)
-    assert(Number.divisible(11) === false)
-    assert(Number.divisible(12) === true)
-    assert(Number.divisible(13) === false)
-    assert(Number.divisible(14) === true)
-    assert(Number.divisible(15) === true)
+  "individable" should "returns true when number N > 8 is not divide by 3 to sqrt(N)" in {
+    assert(Number.individable(9) === false)
+    assert(Number.individable(10) === false)
+    assert(Number.individable(11) === true)
+    assert(Number.individable(12) === false)
+    assert(Number.individable(13) === true)
+    assert(Number.individable(14) === false)
+    assert(Number.individable(15) === false)
   }
 
   "coprime" should "returns co-prime number of N" in {

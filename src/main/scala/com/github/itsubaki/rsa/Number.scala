@@ -9,20 +9,17 @@ object Number {
   def rand(min: Int, max: Int): Int = scala.util.Random.nextInt(max - min) + min
 
   def isPrime(N: Int): Boolean =
-    if (N == 2) true
+    if (N == 2 || N == 3 || N == 5 || N == 7) true
     else if (N % 2 == 0) false
-    else if (divisible(N)) false
-    else true
+    else if (individable(N)) true
+    else false
 
-  def divisible(N: Int): Boolean =
-    if (N == 3 || N == 5 | N == 7) false
-    else if (N == 4 || N == 6 || N == 8) true
-    else
-      !LazyList
-        .from(3, 2)
-        .take(scala.math.sqrt(N).toInt + 1)
-        .find(N % _ == 0)
-        .isEmpty
+  def individable(N: Int): Boolean =
+    LazyList
+      .from(3, 2)
+      .take(scala.math.sqrt(N).toInt + 1)
+      .find(N % _ == 0)
+      .isEmpty
 
   def coprime(N: Int): Int =
     Iterator
