@@ -5,10 +5,13 @@ import (
 	"math/rand/v2"
 )
 
+// Euler returns the Euler's function.
+// p and q must be prime numbers.
 func Euler(p, q uint64) uint64 {
 	return (p - 1) * (q - 1)
 }
 
+// GCD returns the greatest common divisor of a and b.
 func GCD(a, b uint64) uint64 {
 	for b != 0 {
 		a, b = b, a%b
@@ -17,6 +20,7 @@ func GCD(a, b uint64) uint64 {
 	return a
 }
 
+// IsPrime returns true if N is prime number.
 func IsPrime(N uint64) bool {
 	if N < 2 {
 		return false
@@ -39,6 +43,7 @@ func IsPrime(N uint64) bool {
 	return true
 }
 
+// Coprime returns a random coprime number in [2, N).
 func Coprime(N uint64) uint64 {
 	var min, max uint64 = 2, N - 2
 
