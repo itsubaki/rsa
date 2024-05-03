@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+
+# Add
+coverage.txt
+coverage.html
