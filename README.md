@@ -6,12 +6,15 @@
 
 ## Example
 
+[Go Playground](https://go.dev/play/p/Cz8vCo6-b0S)
+
 ```go
 p, q := 17, 19
 
 e := number.Euler(p, q)
 E := rsa.PublicKey(e)
 D := rsa.PrivateKey(e, E)
+
 N := p * q
 fmt.Printf("p=%v, q=%v, e=%v, E=%v, D=%v, N=%v\n", p, q, e, E, D, N)
 

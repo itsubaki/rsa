@@ -14,6 +14,7 @@ func Example() {
 	e := number.Euler(p, q)
 	E := rsa.PublicKey(e, seed)
 	D := rsa.PrivateKey(e, E)
+
 	N := p * q
 	fmt.Printf("p=%v, q=%v, e=%v, E=%v, D=%v, N=%v\n", p, q, e, E, D, N)
 
