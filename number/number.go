@@ -7,12 +7,12 @@ import (
 
 // Euler returns the Euler's function.
 // p and q must be prime numbers.
-func Euler(p, q uint64) uint64 {
+func Euler(p, q int) int {
 	return (p - 1) * (q - 1)
 }
 
 // GCD returns the greatest common divisor of a and b.
-func GCD(a, b uint64) uint64 {
+func GCD(a, b int) int {
 	for b != 0 {
 		a, b = b, a%b
 	}
@@ -21,7 +21,7 @@ func GCD(a, b uint64) uint64 {
 }
 
 // IsPrime returns true if N is prime number.
-func IsPrime(N uint64) bool {
+func IsPrime(N int) bool {
 	if N < 2 {
 		return false
 	}
@@ -34,7 +34,7 @@ func IsPrime(N uint64) bool {
 		return false
 	}
 
-	for i := uint64(3); i < uint64(math.Sqrt(float64(N)))+1; i = i + 2 {
+	for i :=3; i < int(math.Sqrt(float64(N)))+1; i = i + 2 {
 		if N%i == 0 {
 			return false
 		}
@@ -44,11 +44,11 @@ func IsPrime(N uint64) bool {
 }
 
 // Coprime returns a random coprime number in [2, N).
-func Coprime(N uint64) uint64 {
-	var min, max uint64 = 2, N - 2
+func Coprime(N int) int {
+	var min, max int = 2, N - 2
 
 	for {
-		a := rand.Uint64N(max-1) + min
+		a := rand.N(max-1) + min
 		if GCD(N, a) == 1 {
 			return a
 		}

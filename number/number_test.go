@@ -25,8 +25,8 @@ func ExampleGCD() {
 
 func TestGCD(t *testing.T) {
 	cases := []struct {
-		a, b uint64
-		want uint64
+		a, b int
+		want int
 	}{
 		{15, 2, 1},
 		{15, 4, 1},
@@ -46,7 +46,7 @@ func TestGCD(t *testing.T) {
 
 func TestIsPrime(t *testing.T) {
 	cases := []struct {
-		in   uint64
+		in   int
 		want bool
 	}{
 		{1, false},
@@ -83,7 +83,7 @@ func TestIsPrime(t *testing.T) {
 func ExampleCoprime() {
 	p := number.Coprime(15)
 
-	for _, e := range []uint64{2, 4, 7, 8, 11, 13, 14} {
+	for _, e := range []int{2, 4, 7, 8, 11, 13, 14} {
 		if p == e {
 			fmt.Println("found")
 			break
