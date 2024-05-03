@@ -81,7 +81,10 @@ func TestIsPrime(t *testing.T) {
 }
 
 func ExampleCoprime() {
-	p := number.Coprime(15)
+	p, err := number.Coprime(15)
+	if err != nil {
+		panic(err)
+	}
 
 	for _, e := range []int{2, 4, 7, 8, 11, 13, 14} {
 		if p == e {
