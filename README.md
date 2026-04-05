@@ -6,7 +6,7 @@
 
 ## Example
 
-[Go Playground](https://go.dev/play/p/Cz8vCo6-b0S)
+[The Go Playground](https://go.dev/play/p/Cz8vCo6-b0S)
 
 ```go
 p, q := 17, 19
